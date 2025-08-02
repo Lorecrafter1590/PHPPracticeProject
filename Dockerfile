@@ -1,5 +1,8 @@
 FROM php:8.3-cli
 
+# Install Xdebug for code coverage
+RUN pecl install xdebug && docker-php-ext-enable xdebug
+
 # Set working directory
 WORKDIR /var/www/html
 

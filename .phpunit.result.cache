@@ -1,1 +1,1 @@
-{"version":1,"defects":[],"times":{"NotificationManagerTest::testNotifyCallsSendNotification":0.003}}
+{"version":1,"defects":{"NotificationManagerTest::testNotifyHandlesException":7},"times":{"NotificationManagerTest::testNotifyCallsSendNotification":0.006,"NotificationManagerTest::testNotifyHandlesExceptionGracefully":0.004,"NotificationManagerTest::testNotifyHandlesException":0.001,"EmailNotificationTest::testSendNotificationReturnsTrueAndOutputsMessage":0.025}}

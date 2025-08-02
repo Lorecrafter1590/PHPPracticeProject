@@ -27,4 +27,17 @@ class NotificationManagerTest extends TestCase
 
         $this->assertTrue($result);
     }
+    public function testNotifyHandlesException()
+    {
+        $notificationMock = $this->createMock(NotificationInterface::class);
+
+        $notificationMock->method('sendNotification')
+            ->willThrowException(new \Exception('Simulated failure'));
+
+        $manager = new NotificationManager();
+
+        $result = $manager->notify($notificationMock, 'fail@example.com', 'Should fail');
+
+        $this->assertFalse($result);
+    }
 }
