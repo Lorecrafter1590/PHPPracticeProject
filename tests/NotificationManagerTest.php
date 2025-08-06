@@ -27,6 +27,17 @@ class NotificationManagerTest extends TestCase
 
         $this->assertTrue($result);
     }
+
+//    regression test example
+    public function testNotifyReturnsFalseIfRecipientOrMessageIsEmpty()
+    {
+        $notificationMock = $this->createMock(NotificationInterface::class);
+        $manager = new NotificationManager();
+
+        $this->assertFalse($manager->notify($notificationMock, '', 'Valid message'));
+        $this->assertFalse($manager->notify($notificationMock, 'user@example.com', ''));
+    }
+
     public function testNotifyHandlesException()
     {
         $notificationMock = $this->createMock(NotificationInterface::class);

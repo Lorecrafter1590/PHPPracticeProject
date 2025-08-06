@@ -12,6 +12,10 @@ class NotificationManager
         string $message
     ): bool
     {
+        if (empty($recipient) || empty($message)) {
+            return false;
+        }
+
         try {
             return $notification->sendNotification(
                 recipient: $recipient,

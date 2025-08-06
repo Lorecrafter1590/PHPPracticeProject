@@ -17,4 +17,5 @@ class EmailNotificationTest extends TestCase
         $this->assertTrue($result);
         $this->assertStringContainsString('Email sent to user@example.com: Test Email', $output);
     }
+
 }
